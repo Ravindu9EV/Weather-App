@@ -4,7 +4,9 @@
     --bg-color: #243342;
     --heading-color: #4CD137;
     --card-bgColor: #94E387;
-    --table-headColor: #0F2A0B
+    --table-headColor: #0F2A0B;
+    --text-sec-color: #34495E;
+    --text-prim-color: #10161C;
 }
 
 /* -------- */
@@ -13,27 +15,85 @@ body{
     background-color: var(--bg-color);
 }
 .container{
+    position: absolute;
     display: grid;
     grid-template-columns: repeat(2,1fr);
+    margin: 40px;
 }
 
 .leftP{
-    width: 20vw;
-    background-color: azure;
+    width: 15vw;
+    /* background-color: azure; */
     margin-right: 40px;
+    padding: 30px 0px;
+    margin-left: 20px;
 }
 
-.container-2{
-    width: 60vw;
-    background-color: #9AA4AF;
-    
-}
-/* -----theme section--------- */
-.container .theme{
-    width: 100px;
+
+
+/* --------------- search section------------------------- */
+.container-1{
+    position: relative;
+    margin-left: 20px;
+    padding-top: 40px;
+    width: 10vw;
+    height: 70vh;
+   
+    display: flex;
     background-color: var(--card-bgColor);
     border-radius: 50px;
+    color: azure;
+   
+   
+}
 
+.container-1 .navImg{
+    display: grid;
+    margin-top: 50px ;
+}
+.container-1 .navImg img{
+    grid-template-columns: repeat(1,6fr);
+    width: 20px;
+    color: #243342;
+    
+}
+.container-1 nav{
+    margin-top: 47px;
+    grid-template-columns: repeat(1,6fr);
+    margin-left: -20px;
+}
+.container-1 nav ul {
+    list-style-type: none;
+    /* margin: 45px 1px; */
+}
+
+            /* -----theme section--------- */
+.container .theme{
+    width: 80px;
+    background-color: var(--card-bgColor);
+    border-radius: 50px;
+    margin-left: 50px;
+}
+
+
+
+ .container-1 ul li:hover {
+    background-color: var(--bg-color);
+    color: var(--heading-color);
+    border: none;
+    border-radius: 5px;
+    box-sizing: 10px;
+   box-shadow: 1px 2px 1px;
+
+} 
+
+nav ul a{
+    text-decoration: none;
+    color: azure;
+}
+
+.container-1 .navImg img:hover{
+    fill:#243342
 }
 
 
@@ -46,21 +106,15 @@ body{
     --bg-color: #9AA4AF;
     --heading-color: #4CD137;
     --card-bgColor: #94E387;
-    --table-headColor: #0F2A0B
+    --table-headColor: #0F2A0B;
+    --text-sec-color: #10161C;
+    --text-prim-color: #34495E;
 }
 
 .light-mode #themeIcon{
     
-    margin-left: 65px;
+    margin-left: 50px;
 }
-/* ---------------------------------- */
-.container-1{
-    margin-top: 40px;
-    
-    background-color: var(--card-bgColor);
-    border-radius: 50px;
-}
-
 .container .container-1{
    display: flex;
    justify-content: center;
@@ -71,23 +125,81 @@ body{
     display: grid;
     grid-template-columns: repeat(1,2fr);
 } */
+/* ---------------right side------------- */
+.container-2{
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    height: 90vh;
+    background-color: #9AA4AF;
+   
+    align-items: center;
+    
+}
+
+.symbolT{
+    position: relative;
+    background-color: var(--card-bgColor);
+    display: grid;
+    height: 150px;
+    width: 75px;
+    grid-template-columns: repeat(1,2fr);
+    padding: 5px 8px;
+   
+    margin-left: 880px;
+}
+
+
+.symbolT hr{
+    width: 40px;
+    margin-left: 10px;
+   
+}
+.symbolT img{
+    margin-left: 4px;
+    width: 45px;
+}
+
+
+.coverY{
+    width: 55px;
+    height: 55px;
+    background-color: #243342;
+}
+.coverN{
+    width: 55px;
+    height: 55px;
+    background-color: var(--card-bgColor);
+}
+
+.symbolT #sUp,.symbolT #sDwn{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+
 .row{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    margin-top: 10px;
+    margin-top: -80px;
     justify-content: center;
-    margin-left: 10px;
+    margin-left: 300px;
+    margin-bottom: 20px;
 }
 #txt-search{
+    width: 400px;
     height: 40px;
     margin-left: 1px;
     border-radius: 20px;
-    border: 1px solid red;
+    border: 1px solid var(--heading-color);
 }
 
 #txt-search:hover{
-    border: 1px solid red;
-    box-shadow: 1px 2px 5px rgb(223, 87, 19);
+    border: 1px solid var(--heading-color);
+    box-shadow: 1px 2px 5px var(--card-bgColor);
 }
 #btn-search{
     width: 60px;
@@ -95,10 +207,105 @@ body{
     border: none;
     border-radius: 20px;
     
-    background-color: aqua;
+    background-color: var(--heading-color);
     margin-left: 10px;
 }
 #btn-search img{
     width: 30px;
+    
+}
+#btn-search:hover{
+    box-shadow: 1px 2px 5px var(--card-bgColor);
+}
 
+ .search-details{
+    margin-top: 30px;
+    display: grid;
+   grid-template-columns: repeat(2,1fr);
+    width: 70vw;
+    height: 80vh;
+    background: #adbd4f;
+    padding-left: 10px;
+    padding-top: 100px;
+}
+
+/* -------------card section-------------- */
+.container-2 .wCard h4{
+    margin-top: 5px;
+}
+.container-2 .wCard h4,.container-2 .wCard h6{
+    margin-left: 10px;
+
+}
+.container-2 .wCard{
+    width: 480px;
+    height: 300px;
+    background: var(--card-bgColor);
+}
+
+.container-2 .wImage{
+    width: 400px;
+    height: 220px;
+    background-color: var(--card-bgColor);
+}
+
+.container-2 .wCard .midRow {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2;
+}
+
+.container-2 .wCard .midRow img{
+    width: 140px;
+    margin-top: -35px;
+    margin-left: 10px;
+    margin-bottom: -100px;
+}
+.container-2 .wCard .midRow p{
+    margin-top: 15px;
+    margin-left: 30px;
+    margin-top: 10px;
+    
+}
+.container-2 .wCard .midRow #txtCond{
+    margin-left: 120px;
+    margin-top: 20px;
+    color: var(--text-sec-color);
+}
+
+.container-2 .wCard .bRow{
+    display: grid;
+    grid-template-columns: repeat(4 ,2fr) ;
+   
+    /* margin-top: 20px; */
+    margin-left: 60px;
+}
+
+
+
+#windSelect,#presSelect, #dewSelect{
+    height: 20px;
+    width: 20px;
+}
+
+.container-2 .wCard .bRow .headSec{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.container-2 .wCard .bRow .dSub .dHead{
+    font-size: 10px;
+    font-weight: bold;
+    color: var(--text-prim-color);
+}
+.container-2 .wCard .bRow .dSub {
+    margin-top: 25px;
+    color: var(--text-sec-color);
+}
+
+.container-2 .wCard .bRow .dSub .dBody{
+    margin-top: -8px;
+    font-size: smaller;
+    font-weight: 400;
+   
 }

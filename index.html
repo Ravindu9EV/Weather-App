@@ -1,5 +1,8 @@
-<html>
+
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wheather App</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -16,20 +19,102 @@
           <img src="images/lightModeIcon.png" id="themeIcon" alt="">
         </div>
         <div class="container-1">
-          <nav>
-            <ul>
-              <li>Current</li>
-            </ul>
-          </nav>
+          <div class="navImg">
+            <img id="curImg" src="images/sunnyIcon.png" alt="icon.png">
+            
+            <img style="margin-top: -32px;" src="images/forcastIcon.png" alt="icon.png">
+            <img style="margin-top: -42px;" src="images/detailsIcon.png" alt="icon.png">
+            <img style="margin-top: -52px;" src="images/mapIcon.png" alt="icon.png">
+            <img style="margin-top: -62px;" src="images/trendIcon.png" alt="icon.png">
+            <img style="margin-top: -72px;" src="images/newsIcon.png" alt="icon.png">
+          </div>
+          <div class="navItems">
+      
+            <nav>
+              <ul>
+                <a href="#" id="curLbl"><li  style=>Current</li></a>
+                <a href="#"><li style="margin-top: 35px;" >Forcast</li></a>
+                <a href="#"><li style="margin-top: 40px;">Details</li></a>
+               <a href="#"> <li style="margin-top: 40px;">Maps</li></a>
+               <a href="#"> <li style="margin-top: 35px;">Trends</li></a>
+                <a href="#"><li style="margin-top: 40px;">News</li></a>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
       <div class="container-2">
+      
+        <div class="symbolT">
+          <div id="sUp " class="ct coverN " name="cel">
+            <span id="ss" style="position: absolute; z-index: -999;" hidden>celsius</span>
+            <img  src="images/celsius-icon.png" alt="">
+          </div>
+          <hr>
+          <div id="sDwn" class="ct2 coverY" name="far">
+            <span id="sss" style="position: absolute; z-index: -999;" hidden>farenhite</span>
+            <img src="images/fahrenheit-symbol-icon.png" alt="">
+          </div>
+          
+        </div>
         <div class="row " id="row-1">
-            <input id="txt-search" type="search" />
+            <input id="txt-search" placeholder="Country,City" type="search" />
     
-            <button class="btn btn-primary" id="btn-search">
+            <button class="btn btn-primary" id="btn-search"  onclick="search()">
               <img src="images/searchIcon.png" alt="search-icon" />
             </button>
+        </div>
+        
+
+        <div class="search-details">
+          
+          <div class="wCard">
+            <h4>Weather details</h4>
+            <h6 id="feelsL">Humidity</h6>
+            <div class="midRow">
+              <img id="wCond" src="images/pCloudy.png" alt="">
+              <p id="cTemp">Temperature</p>
+              <p id="txtCond">cloud</p>
+            </div>
+            <div class="bRow">
+              <div class="dSub">
+                <div class="headSec">
+                  <p  class="dHead">Wind</p>
+                <select id="windSelect">
+                  <option value="kph" selected>kph</option>
+                  <option value="mph">mph</option>
+                </select>
+                </div>
+              <p id="windD" class="dBody">7878.12&</p>
+              </div>
+              <div class="dSub">
+                <div class="headSec">
+                  <p  class="dHead">Pressure</p>
+                <select id="presSelect">
+                  <option value="in" selected>in</option>
+                  <option value="mb">mb</option>
+                </select>
+                </div>
+              <p id="pressD" class="dBody">7878.12</p>
+              </div>
+              <div class="dSub">
+                <p  class="dHead">Humidity</p>
+              <p id="humidD" class="dBody">7878.12</p>
+              </div>
+              <div class="dSub">
+                <div class="headSec">
+                  <p   id="dew" class="dHead">Dew Point</p>
+                <select id="dewSelect">
+                  <option value="kph" selected>&#8451;</option>
+                  <option value="mph">&#8457;</option>
+                </select>
+                </div>
+              <p id="dewD" class="dBody">7878.12</p>
+              </div>
+            </div>
+          </div>
+          <div class="wImage"><img src="" alt=""></div>
+        </div>
       </div>
       
     </div>
