@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Ravindu9EV/Weather-App/issues"
   },
-  "homepage": "https://github.com/Ravindu9EV/Weather-App#readme"
+  "homepage": "https://github.com/Ravindu9EV/Weather-App#readme",
+  "dependencies": {
+    "leaflet": "^1.9.4"
+  }
 }
