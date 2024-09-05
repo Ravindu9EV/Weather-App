@@ -11,125 +11,357 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/forcastStyle.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   </head>
   <body>
-    <div class="container">
-      <div class="leftP">
-        <div class="theme">
-          <img src="images/lightModeIcon.png" id="themeIcon" alt="">
-        </div>
-        <div class="container-1">
-          <div class="navImg">
-            <img id="curImg" src="images/sunnyIcon.png" alt="icon.png">
-            
-            <img style="margin-top: -32px;" src="images/forcastIcon.png" alt="icon.png">
-            <img style="margin-top: -42px;" src="images/detailsIcon.png" alt="icon.png">
-            <img style="margin-top: -52px;" src="images/mapIcon.png" alt="icon.png">
-            <img style="margin-top: -62px;" src="images/trendIcon.png" alt="icon.png">
-            <img style="margin-top: -72px;" src="images/newsIcon.png" alt="icon.png">
-          </div>
-          <div class="navItems">
-      
-            <nav>
-              <ul>
-                <a href="#" id="curLbl"><li  style=>Current</li></a>
-                <a href="#"><li style="margin-top: 35px;" >Forcast</li></a>
-                <a href="#"><li style="margin-top: 40px;">Details</li></a>
-               <a href="#"> <li style="margin-top: 40px;">Maps</li></a>
-               <a href="#"> <li style="margin-top: 35px;">Trends</li></a>
-                <a href="#"><li style="margin-top: 40px;">News</li></a>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-      <div class="container-2">
-      
-        <div class="symbolT">
-          <div id="sUp " class="ct coverN " name="cel">
-            <span id="ss" style="position: absolute; z-index: -999;" hidden>celsius</span>
-            <img  src="images/celsius-icon.png" alt="">
-          </div>
-          <hr>
-          <div id="sDwn" class="ct2 coverY" name="far">
-            <span id="sss" style="position: absolute; z-index: -999;" hidden>farenhite</span>
-            <img src="images/fahrenheit-symbol-icon.png" alt="">
-          </div>
-          
-        </div>
-        <div class="row " id="row-1">
-            <input id="txt-search" placeholder="Country,City" type="search" />
     
-            <button class="btn btn-primary" id="btn-search"  >
-              <img src="images/searchIcon.png" alt="search-icon" />
-            </button>
-        </div>
+
+    <section>
+      <div class="container">
+        <div class="leftP">
+          <div class="theme">
+            <img src="images/lightModeIcon.png" id="themeIcon" alt="">
+          </div>
+          <div class="container-1">
+            <div class="navImg">
+              <img id="curImg" src="images/sunnyIcon.png" alt="icon.png">
+              
+              <img style="margin-top: -32px;" src="images/forcastIcon.png" alt="icon.png">
+              <img style="margin-top: -42px;" src="images/detailsIcon.png" alt="icon.png">
+              <img style="margin-top: -52px;" src="images/mapIcon.png" alt="icon.png">
+              <img style="margin-top: -62px;" src="images/trendIcon.png" alt="icon.png">
+              <img style="margin-top: -72px;" src="images/newsIcon.png" alt="icon.png">
+            </div>
+            <div class="navItems">
         
-
-        <div id="s-details" class="search-details">
-           <div id="w-row" class="wRow">  
-            <!-- <div class="wCard ">
-              <h4 id="locDHead">Weather details</h4>
-              <h6 id="feelsL">Humidity</h6>
-              <div class="midRow">
-                <img id="wCond" src="images/pCloudy.png" alt="">
-                <p id="cTemp">Temperature</p>
-                <p id="txtCond">cloud</p>
+              <nav>
+                <ul>
+                  <a href="#" id="curLbl"><li  style=>Current</li></a>
+                  <a href="#forecastW"><li style="margin-top: 35px;" >Forcast</li></a>
+                  <a href="#detailsW"><li style="margin-top: 40px;">Details</li></a>
+                 <a href="#wethMaps"> <li style="margin-top: 40px;">Maps</li></a>
+                 <a href="#"> <li style="margin-top: 35px;">Trends</li></a>
+                  <a href="#"><li style="margin-top: 40px;">News</li></a>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="container-2">
+        
+          <div class="symbolT">
+            <div id="sUp " class="ct coverN " name="cel">
+              <span id="ss" style="position: absolute; z-index: -999;" hidden>celsius</span>
+              <img  src="images/celsius-icon.png" alt="">
+            </div>
+            <hr>
+            <div id="sDwn" class="ct2 coverY" name="far">
+              <span id="sss" style="position: absolute; z-index: -999;" hidden>farenhite</span>
+              <img src="images/fahrenheit-symbol-icon.png" alt="">
+            </div>
+            
+          </div>
+          <div class="row " id="row-1">
+              <div class="top-level">
+                <input id="txt-search" placeholder="Country,City" type="search" />
+      
+              <button class="btn btn-primary" id="btn-search"  >
+                <img src="images/searchIcon.png" alt="search-icon" />
+              </button>
               </div>
-              <div class="bRow">
-                <div class="dSub">
-                  <div class="headSec">
-                    <p  class="dHead">Wind</p>
-                  <select id="windSelect">
-                    <option value="kph" selected>kph</option>
-                    <option value="mph">mph</option>
-                  </select>
+          </div>
+          
+  
+          <div id="s-details" class="search-details">
+             <div id="w-row" class="wRow">  
+              <!-- <div class="wCard ">
+                <h4 id="locDHead">Weather details</h4>
+                <h6 id="feelsL">Humidity</h6>
+                <div class="midRow">
+                  <img id="wCond" src="images/pCloudy.png" alt="">
+                  <p id="cTemp">Temperature</p>
+                  <p id="txtCond">cloud</p>
+                </div>
+                <div class="bRow">
+                  <div class="dSub">
+                    <div class="headSec">
+                      <p  class="dHead">Wind</p>
+                    <select id="windSelect">
+                      <option value="kph" selected>kph</option>
+                      <option value="mph">mph</option>
+                    </select>
+                    </div>
+                  <p id="windD" class="dBody">7878.12&</p>
                   </div>
-                <p id="windD" class="dBody">7878.12&</p>
-                </div>
-                <div class="dSub">
-                  <div class="headSec">
-                    <p  class="dHead">Pressure</p>
-                  <select id="presSelect">
-                    <option value="in" selected>in</option>
-                    <option value="mb">mb</option>
-                  </select>
+                  <div class="dSub">
+                    <div class="headSec">
+                      <p  class="dHead">Pressure</p>
+                    <select id="presSelect">
+                      <option value="in" selected>in</option>
+                      <option value="mb">mb</option>
+                    </select>
+                    </div>
+                  <p id="pressD" class="dBody">7878.12</p>
                   </div>
-                <p id="pressD" class="dBody">7878.12</p>
-                </div>
-                <div class="dSub">
-                  <p  class="dHead">Humidity</p>
-                <p id="humidD" class="dBody">7878.12</p>
-                </div>
-                <div class="dSub">
-                  <div class="headSec">
-                    <p   id="dew" class="dHead">Dew Point</p>
-                  <select id="dewSelect">
-                    <option value="celsius" selected>&#8451;</option>
-                    <option value="farenhite">&#8457;</option>
-                  </select>
+                  <div class="dSub">
+                    <p  class="dHead">Humidity</p>
+                  <p id="humidD" class="dBody">7878.12</p>
                   </div>
-                <p id="dewD" class="dBody">7878.12</p>
+                  <div class="dSub">
+                    <div class="headSec">
+                      <p   id="dew" class="dHead">Dew Point</p>
+                    <select id="dewSelect">
+                      <option value="celsius" selected>&#8451;</option>
+                      <option value="farenhite">&#8457;</option>
+                    </select>
+                    </div>
+                  <p id="dewD" class="dBody">7878.12</p>
+                  </div>
                 </div>
-              </div>
+              </div> 
+  
+  
+             <div id="map" class="wImage" ></div> -->
+              
+             
+             
+  
             </div> 
-
-
-           <div id="map" class="wImage" ></div> -->
             
            
-           
-
-          </div> 
+          </div>
           
-         
         </div>
         
       </div>
-      
-    </div>
+    </section>
+
+    
+
+
+    <section id="forecastW">
+      <div class="container">
+
+        <!-- <div class="leftP">
+
+        </div> -->
+
+        <div class="forecast">
+          <h1>Weather Forecast</h1>
+          <h3>
+            7 Day Forecast
+          </h3>
+
+          <div id="carouselExampleRide" class="rowF  carousel slide" data-bs-ride="false">
+            <div class=" carousel-inner ">
+              <div class=" carousel-item active">
+               <div class=" cardsF ">
+                <div id="day-1" class="cardF ">
+                  
+                  <h4>day 1</h4>
+                  <div class="condF">
+                    <img src="" alt="">
+                    <p id="wConditionFTxt">Condition</p>
+                  </div>
+                  <div class="descriptionW">
+                    <p id="wTmpMax">Max Tem</p>
+                    <p id="wTempMin"> Min Temp</p>
+
+                  </div>
+                  <div class="perciption ">
+                    <div class="perciptionRow">
+                      <p  id="txtPerciption">Chance of rain</p>
+                      <p id="txtPerciptionV">89%</p>
+                    </div>
+                  </div>
+                </div>
+                <div id="day-2" class="cardF ">
+                  <h4>day 2</h4>
+                  <div class="condF">
+                    <img src="" alt="">
+                    <p id="wConditionFTxt">Condition</p>
+                  </div>
+                  <div class="descriptionW">
+                    <p id="wTmpMax">Max Tem</p>
+                    <p id="wTempMin"> Min Temp</p>
+
+                  </div>
+                  <div class="perciption ">
+                    <div class="perciptionRow">
+                      <p  id="txtPerciption">Chance of rain</p>
+                      <p id="txtPerciptionV">89%</p>
+                    </div>
+                  </div>
+                </div>
+                <div id="day-3" class="cardF ">
+                  <h4>day 3</h4>
+                  <div class="condF">
+                    <img src="" alt="">
+                    <p id="wConditionFTxt">Condition</p>
+                  </div>
+                  <div class="descriptionW">
+                    <p id="wTmpMax">Max Tem</p>
+                    <p id="wTempMin"> Min Temp</p>
+
+                  </div>
+                  <div class="perciption ">
+                    <div class="perciptionRow">
+                      <p  id="txtPerciption">Chance of rain</p>
+                      <p id="txtPerciptionV">89%</p>
+                    </div>
+                  </div>
+                </div>
+               </div>
+              </div>
+              <div class=" carousel-item">
+                <div class="cardsF">
+                  <div id="day-4" class="cardF ">
+                    <h4>day 4</h4>
+                    <div class="condF">
+                      <img src="" alt="">
+                      <p id="wConditionFTxt">Condition</p>
+                    </div>
+                    <div class="descriptionW">
+                      <p id="wTmpMax">Max Tem</p>
+                      <p id="wTempMin"> Min Temp</p>
+
+                    </div>
+                    <div class="perciption ">
+                      <div class="perciptionRow">
+                        <p  id="txtPerciption">Chance of rain</p>
+                        <p id="txtPerciptionV">89%</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="day-5" class="cardF ">
+                    <h4>day 5</h4>
+                      
+                      
+
+                    <div class="condF">
+                      <img src="" alt="">
+                      <p id="wConditionFTxt">Condition</p>
+                    </div>
+                    <div class="descriptionW">
+                      <p id="wTmpMax">Max Tem</p>
+                      <p id="wTempMin"> Min Temp</p>
+
+                    </div>
+                    <div class="perciption ">
+                      <div class="perciptionRow">
+                        <p  id="txtPerciption">Chance of rain</p>
+                        <p id="txtPerciptionV">89%</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="day-6" class="cardF ">
+                    <h4>day 6</h4>
+                    <div class="condF">
+                      <img src="" alt="">
+                      <p id="wConditionFTxt">Condition</p>
+                    </div>
+                    <div class="descriptionW">
+                      <p id="wTmpMax">Max Tem</p>
+                      <p id="wTempMin"> Min Temp</p>
+
+                    </div>
+                    <div class="perciption ">
+                      <div class="perciptionRow">
+                        <p  id="txtPerciption">Chance of rain</p>
+                        <p id="txtPerciptionV">89%</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="cardsF">
+                  <div id="day-7" class="cardF ">
+                    <h4>day 7</h4>
+                    <div class="condF">
+                      <img src="txtPerciption" alt="">
+                      <p id="wConditionFTxt">Condition</p>
+                    </div>
+                    <div class="descriptionW">
+                      <p id="wTmpMax">Max Tem</p>
+                      <p id="wTempMin"> Min Temp</p>
+
+                    </div>
+                    <div class="perciption ">
+                      <div class="perciptionRow">
+                        <p  id="">Chance of rain</p>
+                        <p id="txtPerciptionV">89%</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          
+             
+              
+           
+
+        </div>
+      </div>
+    </section>
+    <section id="detailsW">
+      <div class="container">
+
+        
+
+        <div class="wDetails">
+          <h1>Weather Details</h1>
+        </div>
+      </div>
+    </section>
+
+    <section id="wethMaps">
+      <div class="container">
+        <div class="wetherMps">
+          <h1>Maps</h1>
+
+          <div class="mapContainer">
+            <img src="https://zoom.earth/maps/temperature/" alt="">
+          </div>
+
+          <div class="mapBar">
+            <div class="mapItem">
+              <img src="images/tempIcon.png" alt="">
+              <a href=""><p>Temperature</p></a>
+            </div>
+            <div class="mapItem">
+              <img src="images/windIcon.png" alt="">
+              <a href=""><p>Wind Map</p></a>
+            </div>
+            <div class="mapItem">
+              <img src="images/rainIcon.png" alt="">
+              <a href=""><p>Rain Map </p></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="trendsHis">
+      <div class="container">
+        <div class="historicDataContainer">
+          <h1>Weather Trends</h1>
+        </div>
+      </div>
+    </section>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

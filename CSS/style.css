@@ -13,20 +13,25 @@
 body{
     width: 100vw;
     background-color: var(--bg-color);
+    scroll-behavior: smooth;
 }
 .container{
-    position: absolute;
+   
     display: grid;
     grid-template-columns: repeat(2,1fr);
     margin: 40px;
+    
 }
 
 .leftP{
+    position: fixed;
     width: 15vw;
     /* background-color: azure; */
     margin-right: 40px;
     padding: 30px 0px;
     margin-left: 20px;
+    position: fixed;
+   margin-right: 200px;
 }
 
 
@@ -72,7 +77,7 @@ body{
     width: 80px;
     background-color: var(--card-bgColor);
     border-radius: 50px;
-    margin-left: 50px;
+    margin-left: 56px;
 }
 
 
@@ -132,21 +137,21 @@ nav ul a{
     flex-direction: column;
     width: 70vw;
     height: 90vh;
-    background-color: #9AA4AF;
-   
+    background-color: var(--text-sec-color);
+    margin-left: 200px;
     align-items: center;
     
 }
 
 .symbolT{
-    position: relative;
+    position: fixed;
     background-color: var(--card-bgColor);
     display: grid;
     height: 150px;
     width: 75px;
     grid-template-columns: repeat(1,2fr);
     padding: 5px 8px;
-   
+   z-index: 999;
     margin-left: 880px;
 }
 
@@ -180,16 +185,21 @@ nav ul a{
    
 }
 
-
+.top-level{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+   
+}
 .row{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    margin-top: -80px;
+    margin-top: 40px;
     justify-content: center;
     margin-left: 300px;
     margin-bottom: 20px;
 }
 #txt-search{
+   
     width: 400px;
     height: 40px;
     margin-left: 1px;
@@ -202,6 +212,7 @@ nav ul a{
     box-shadow: 1px 2px 5px var(--card-bgColor);
 }
 #btn-search{
+   
     width: 60px;
     height: 40px;
     border: none;
@@ -223,7 +234,7 @@ nav ul a{
     display: grid;
    grid-template-columns: repeat(2,1fr);
     width: 70vw;
-    height: 80vh;
+    height: 60vh;
     background: #adbd4f;
     padding-left: 10px;
     padding-top: 100px;
@@ -253,7 +264,7 @@ nav ul a{
 .container-2 .wImage{
     width: 400px;
     height: 220px;
-   
+ 
     
 }
 
@@ -323,7 +334,8 @@ nav ul a{
 /*    map */
 
 #map{
-    height: 100%;
+    height: 200px;
+    margin-bottom: 100px;
 }
 
 
@@ -342,4 +354,286 @@ nav ul a{
 
 .custom-map-control-button:hover{
     background: rgb(235, 235,235);
+}
+
+
+/* ------Forecast--------------------- */
+
+
+.forecast{
+    position: relative;
+    width: 70vw;
+    height: 90vh;
+    margin-left: 200px;
+    background-color: var(--text-sec-color);
+}
+
+
+.forecast h1{
+    color: var(--heading-color);
+    text-align: center;
+    font-weight: bolder;
+
+}
+
+.forecast h3{
+    margin-top: 60px;
+    margin-left: 30px;
+    font-weight: 600;
+    color: var(--card-bgColor);
+}
+
+
+
+
+/* -------------weather details-------------- */
+
+.wDetails{
+    position: relative;
+    width: 70vw;
+    height: 90vh;
+    margin-left: 200px;
+    background-color: var(--card-bgColor);
+}
+
+.wDetails h1{
+    color: var(--heading-color);
+    text-align: center
+    
+}
+
+
+
+    /* ----------forecast cards-------- */
+
+#forcastW{
+    display: flex;
+    justify-content: center;
+}
+.rowF{
+   
+    margin-top: 60px;
+  align-items: center;
+  
+}
+
+ .cardsF{
+    display: flex;
+   flex-direction: row;
+    overflow: hidden;
+    margin-left: 140px;
+    margin-right: 100px;
+    
+    grid-template-columns: repeat(3,1fr);
+   
+    gap: 20px;
+}
+
+ .cardF{
+   padding: 10px;
+    
+    width: 250px;
+    height: 200px;
+    background: var(--card-bgColor);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.cardF h4{
+  margin-top: 12px;
+  font-weight: 700;
+  color: var(--table-headColor);
+}
+
+.cardF .condF {
+    display: grid;
+    grid-template-columns: repeat(1,2fr);
+    gap: 20px;
+    width: 80px;
+    height: 50px;
+    margin-top: 20px;
+    background: #243342;
+}
+.cardF .condF img{
+    width: 80px;
+    height: 60px;
+    background: #243342;
+}
+
+.cardF .condF p{
+    margin-top: -15px;
+    margin-left: 2px;
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--text-sec-color);
+}
+
+#wConditionFTxt{
+    font-size: 9.4;
+}
+.cardF .descriptionW{
+    margin-top: -40px;
+}
+
+.cardF .descriptionW p{
+    font-size: smaller;
+    font-weight: 600;
+    
+    margin-left: 125px;
+    margin-bottom: 5px;
+    color: var(--text-sec-color);
+}
+
+.cardF .perciptionRow{
+    margin-top: 35px;
+    height: 4px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-left: 65px;
+}
+#txtPerciption {
+    font-size: 12px;
+    font-weight: 610;
+    margin-left: 2px;
+}
+.perciptionRow #txtPerciptionV {
+    font-size: 12.5px ;
+    font-weight: 650;
+    margin-left: 2px;
+    color: var(--table-headColor);
+}
+
+
+
+
+
+
+/* .symbolTF{
+    position: relative;
+    background-color: var(--card-bgColor);
+    display: grid;
+    height: 50px;
+    width: 34px;
+    grid-template-columns: repeat(1,2fr);
+    padding: 5px 8px;
+   
+    margin-left: 880px;
+}
+
+
+.symbolTF hr{
+    width: 15px;
+    margin-left: 10px;
+   margin-top: 4px;
+   margin-bottom: 4px;
+}
+.symbolTF img{
+    margin-left: 4px;
+    width: 15px;
+}
+
+
+.symbolTF .coverY{
+    width: 22px;
+    height: 16px;
+    background-color: #243342;
+}
+.symbolTF .coverN{
+    width: 15px;
+    height: 16px;
+    background-color: var(--card-bgColor);
+}
+
+
+.symbolTF #sUp,.symbolTF #sDwn{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+   
+} */
+
+/* ---------------wether Maps-------------- */
+
+#wethMaps{
+    display: flex;
+    justify-content: center;
+}
+
+.wetherMps{
+    position: relative;
+    width: 70vw;
+    height: 90vh;
+    margin-left: 132px;
+    background-color: var(--text-sec-color);
+}
+
+#wethMaps h1{
+    text-align: center;
+    color: var(--heading-color);
+}
+
+
+.mapContainer{
+    
+    width: 800px;
+    height: 400px;
+    margin-top: 80px;
+    margin-left:  135px;
+    background-color: var(--text-prim-color);
+}
+
+.mapContainer img{
+    width: 600px;
+    height: 395px;
+}
+
+.mapBar{
+    width: 600px;
+    height: 65px;
+    display: grid;
+    background-color: var(--card-bgColor);
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+    border-radius: 40px;
+    margin-top: 20px;
+    margin-left: 240px;
+    padding: 4px 0;
+}
+
+.mapItem{
+    grid-template-columns: repeat(1,2fr);
+}
+
+.mapItem img{
+    width: 30px;
+    height: 30px;
+}
+
+.mapItem a{
+    text-decoration: none;
+    color: var(--text-sec-color);
+}
+
+/* -------trends-Historic data------- */
+
+#trendsHis{
+    display: flex;
+    justify-content: center;
+}
+
+.historicDataContainer{
+    position: relative;
+    width: 70vw;
+    height: 90vh;
+    margin-left: 132px;
+    background-color: var(--text-sec-color);
+    justify-content: center;
+    text-align: center;
+}
+
+
+.historicDataContainer h1{
+    color: var(--heading-color);
 }

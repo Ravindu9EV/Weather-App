@@ -81,8 +81,11 @@ let details = [];
 let latitudeG, longitudeG, tempF, windMph, fLikeF, dewPF, pressureM;
 let country, region, cityN, time;
 let map;
+let foreCastLocation;
 document.getElementById("btn-search").addEventListener("click", () => {
   search();
+  foreCastLocation = document.getElementById("txt-search").value;
+  foreCast();
   console.log(document.getElementById("txt-search").value);
 });
 document.getElementById("txt-search").addEventListener("click", () => {
@@ -92,6 +95,7 @@ document.getElementById("txt-search").addEventListener("click", () => {
 function search() {
   document.getElementById("btn-search").addEventListener("click", () => {
     var location = document.getElementById("txt-search").value;
+    foreCastLocation = location;
     fetch(
       `http://api.weatherapi.com/v1/current.json?key=6b9fad01b91c43c4b36102328242608&q=${location}&aqi=no`
     )
@@ -381,3 +385,99 @@ function error(err) {
     alert("Cannot get current location");
   }
 }
+
+// -------------------forecast-------------------------------
+let fMaxTemp, fMinTemp;
+let maxInCel, maxInfar, minInCel, minInFar;
+let cardForecast;
+function foreCast() {
+  fetch(
+    `http://api.weatherapi.com/v1/forecast.json?key=6b9fad01b91c43c4b36102328242608&q=${foreCastLocation}&days=7&aqi=no&alerts=yes
+`
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data.forecast.forecastday[0]);
+      console.log(data.forecast.forecastday.length);
+      for (let i = 0; i < data.forecast.forecastday.length; i++) {
+        switch (i) {
+          case 0:
+            cardForecast = document.getElementById("day-1");
+            break;
+          case 1:
+            cardForecast = document.getElementById("day-2");
+            break;
+          case 2:
+            cardForecast = document.getElementById("day-3");
+            break;
+          case 3:
+            cardForecast = document.getElementById("day-4");
+            break;
+          case 4:
+            cardForecast = document.getElementById("day-5");
+            break;
+          case 5:
+            cardForecast = document.getElementById("day-6");
+            break;
+          case 6:
+            cardForecast = document.getElementById("day-7");
+            break;
+        }
+        let fTitle = cardForecast.childNodes[1];
+        let fConditionImage = cardForecast.childNodes[3].childNodes[1];
+        let fConditionText = cardForecast.childNodes[3].childNodes[3];
+        fMaxTemp = cardForecast.childNodes[5].childNodes[1];
+        fMinTemp = cardForecast.childNodes[5].childNodes[3];
+        let fperciption =
+          cardForecast.childNodes[7].childNodes[1].childNodes[3];
+        fperciption.innerText =
+          data.forecast.forecastday[i].day.daily_chance_of_rain + "%";
+        console.log(fperciption.innerText);
+        fTitle.innerText = data.forecast.forecastday[i].date;
+        fConditionImage.src = data.forecast.forecastday[i].day.condition.icon;
+        fConditionText.innerText =
+          data.forecast.forecastday[i].day.condition.text;
+        maxInfar = data.forecast.forecastday[i].day.maxtemp_f;
+        minInFar = data.forecast.forecastday[i].day.mintemp_f;
+        maxInCel = data.forecast.forecastday[i].day.maxtemp_c;
+        minInCel = data.forecast.forecastday[i].day.mintemp_c;
+        if (celsius.childNodes[1].textContent.startsWith("f")) {
+          fMaxTemp.innerText =
+            data.forecast.forecastday[i].day.maxtemp_f + " \u00B0F";
+          fMinTemp.innerText =
+            data.forecast.forecastday[i].day.mintemp_f + " \u00B0F";
+        } else {
+          fMaxTemp.innerText =
+            data.forecast.forecastday[i].day.maxtemp_c + " \u00B0C";
+          fMinTemp.innerText =
+            data.forecast.forecastday[i].day.mintemp_c + " \u00B0C";
+        }
+      }
+    });
+
+  console.log(foreCastLocation + "farcast");
+}
+
+// -------------------change symbol-----------
+
+faren.addEventListener("click", () => {
+  foreCast();
+  if (celsius.childNodes[1].textContent.startsWith("f")) {
+    fMaxTemp.innerText = maxInfar + " \u00B0F";
+    fMinTemp.innerText = minInFar + " \u00B0F";
+  } else {
+    fMaxTemp.innerText = maxInCel + " \u00B0C";
+    fMinTemp.innerText = minInCel + " \u00B0C";
+  }
+});
+
+celsius.addEventListener("click", () => {
+  foreCast();
+  if (celsius.childNodes[1].textContent.startsWith("f")) {
+    fMaxTemp.innerText = maxInfar + " \u00B0F";
+    fMinTemp.innerText = minInFar + " \u00B0F";
+  } else {
+    fMaxTemp.innerText = maxInCel + " \u00B0C";
+    fMinTemp.innerText = minInCel + " \u00B0C";
+  }
+});
