@@ -82,10 +82,13 @@ let latitudeG, longitudeG, tempF, windMph, fLikeF, dewPF, pressureM;
 let country, region, cityN, time;
 let map;
 let foreCastLocation;
+document.getElementById("DOM");
 document.getElementById("btn-search").addEventListener("click", () => {
   search();
+
   foreCastLocation = document.getElementById("txt-search").value;
   foreCast();
+
   console.log(document.getElementById("txt-search").value);
 });
 document.getElementById("txt-search").addEventListener("click", () => {
@@ -96,9 +99,8 @@ function search() {
   document.getElementById("btn-search").addEventListener("click", () => {
     var location = document.getElementById("txt-search").value;
     foreCastLocation = location;
-    fetch(
-      `http://api.weatherapi.com/v1/current.json?key=6b9fad01b91c43c4b36102328242608&q=${location}&aqi=no`
-    )
+    url = `http://api.weatherapi.com/v1/current.json?key=6b9fad01b91c43c4b36102328242608&q=${location}&aqi=no`;
+    fetch(url)
       .then((response) => response.json())
       .then((data) => details.push(data));
   });
@@ -231,6 +233,7 @@ function search() {
       lontt
     );
   });
+  getAlerts();
 }
 
 function setDetails(
@@ -390,6 +393,7 @@ function error(err) {
 let fMaxTemp, fMinTemp;
 let maxInCel, maxInfar, minInCel, minInFar;
 let cardForecast;
+let dayHistry;
 function foreCast() {
   fetch(
     `http://api.weatherapi.com/v1/forecast.json?key=6b9fad01b91c43c4b36102328242608&q=${foreCastLocation}&days=7&aqi=no&alerts=yes
@@ -397,7 +401,8 @@ function foreCast() {
   )
     .then((response) => response.json())
     .then((data) => {
-      console.log(data.forecast.forecastday[0]);
+      console.log(data.forecast.forecastday[0].date + "pllplpl");
+      dayHistry = data.forecast.forecastday[0].date;
       console.log(data.forecast.forecastday.length);
       for (let i = 0; i < data.forecast.forecastday.length; i++) {
         switch (i) {
@@ -453,10 +458,12 @@ function foreCast() {
             data.forecast.forecastday[i].day.mintemp_c + " \u00B0C";
         }
       }
+      console.log(data.alerts);
     });
 
   console.log(foreCastLocation + "farcast");
 }
+console.log(dayHistry + "jfskdjsdhdjsddka");
 
 // -------------------change symbol-----------
 
@@ -481,3 +488,152 @@ celsius.addEventListener("click", () => {
     fMinTemp.innerText = minInCel + " \u00B0C";
   }
 });
+
+let headline, situation, areas, timeRange, impact;
+
+function getAlerts() {
+  document.getElementById("btn-search").addEventListener(
+    "click",
+    fetch(
+      `http://api.weatherapi.com/v1/forecast.json?key=6b9fad01b91c43c4b36102328242608&q=${foreCastLocation}&days=1&aqi=no&alerts=yes`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data.alerts.alert[0]);
+        if (data.alerts.length <= 0) {
+          let message = document.createElement("div");
+          message.classList.add("n-message");
+          message.innerHTML = `<h3>No Alerts...</h3>`;
+          document.getElementById("noticeRow").appendChild(message);
+        } else {
+          data.alerts.alert.forEach((alert) => {
+            headline = alert.headline;
+            console.log(alert.desc, alert.event);
+            let efc = alert.effective;
+            let afcDay = alert.effective.substr(0, 10);
+            let efcTime = alert.effective.substr(11, 8);
+            let expDay = alert.expires.substr(0, 10);
+            let expTime = alert.expires.substr(11, 8);
+            console.log(efcTime);
+
+            console.log("From : " + afcDay + " Since " + efcTime);
+            console.log(" : " + expDay + " till " + expTime);
+            let tArray = [];
+            alert.desc.split("\n").forEach((text) => tArray.push(text));
+            console.log(tArray);
+
+            for (let i = 0; i < tArray.length; i++) {
+              if (tArray[i].startsWith("* WHAT...")) {
+                console.log(tArray[i].replace("* WHAT...", ""));
+                situation = tArray[i].replace("* WHAT...", "");
+                // console.log(tArray[i].replace("* WHAT...", ""));
+              }
+              if (tArray[i].startsWith("* WHERE...")) {
+                console.log(tArray[i].replace("* WHERE...", ""));
+                areas = tArray[i].replace("* WHERE...", "");
+                // console.log(areas);
+              }
+              if (tArray[i].startsWith("* WHEN...")) {
+                console.log(tArray[i].replace("* WHEN...", ""));
+                timeRange = tArray[i].replace("* WHEN...", "");
+                // console.log(timeRange);
+              }
+              if (tArray[i].startsWith("* IMPACTS...")) {
+                console.log(tArray[i].replace("* IMPACTS...", ""));
+                impact = tArray[i].replace("* IMPACTS...", "");
+                // console.log(impact);
+              }
+              if (tArray[i].length === 0) {
+                console.log(tArray[i]);
+                continue;
+              }
+            }
+
+            let noticeCard = document.createElement("div");
+            noticeCard.classList.add("card");
+            noticeCard.classList.add("text-bg-secondary");
+            noticeCard.classList.add("mb-3");
+            noticeCard.id = "noticeCard";
+            noticeCard.innerHTML = `
+                      <div id="noticeHeading" class="card-header">${headline}</div>
+                      <div class="card-body">
+                        <h5 id="situation" class="card-title"> ${situation}</h5>
+                        <p id="areas" class="card-text">Areas --> ${areas}</p>
+                        <p id="time-range" class="card-text">Time --> ${timeRange}</p>
+                        <p id="impact" class="card-text">Impact --> ${impact}</p>
+  
+                      </div>
+  
+               `;
+
+            document.getElementById("noticeRow").appendChild(noticeCard);
+            console.log(
+              situation + " \n\n" + areas + "\n\n" + timeRange + "\n\n" + impact
+            );
+          });
+        }
+      })
+      .then(() => {
+        Location.reload();
+      })
+  );
+}
+
+// -------------Historical Weather Data-------------
+
+let hisrtyUrl;
+
+// let histryYear = dayHistry.substr(0, 4);
+
+// let today = ;
+let dat = new Date().getUTCDate();
+var c = dat;
+// for (let i = dat; i > 0; i--) {
+//   console.log(i);
+// }
+
+let cnt = 0;
+let year = 2024;
+dat = 9;
+let mHistry = [];
+let mYear = [year];
+while (dat != 0) {
+  if (dat < 12) {
+    console.log(dat);
+    mHistry.push(dat);
+    cnt++;
+
+    dat--;
+    if (dat == 0) {
+      year -= 1;
+      for (let i = 12, j = 12 - cnt; j >= 1; j--, i--) {
+        console.log(i);
+        mHistry.push(i);
+      }
+      console.log(year);
+      mYear.push(year);
+    }
+  }
+}
+console.log(mYear, mHistry);
+
+mHistry.forEach((month) => {
+  if (month == 12) {
+    fetch(
+      `http://api.weatherapi.com/v1/history.json?key=6b9fad01b91c43c4b36102328242608&q=New York&dt=${mYear[1]}-0${month}-01`
+    )
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+  }
+  fetch(
+    `http://api.weatherapi.com/v1/history.json?key=6b9fad01b91c43c4b36102328242608&q=New York&dt=${mYear[0]}-0${month}-01`
+  )
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+});
+
+// --------------------------------------------------
+
+// revers Geocoding
+
+// https://us1.locationiq.com/v1/reverse?key=pk.b0b0056982878238716759112ee9c218&lat=51.50344025&lon=-0.12770820958562096&format=json&

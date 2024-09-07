@@ -258,7 +258,10 @@ nav ul a{
 .container-2 .wCard{
     width: 480px;
     height: 300px;
+    padding: 2px;
+    border: 1px solid var(--table-headColor);
     background: var(--card-bgColor);
+    border-radius: 20px;
 }
 
 .container-2 .wImage{
@@ -297,10 +300,16 @@ nav ul a{
     display: grid;
     grid-template-columns: repeat(4 ,2fr) ;
    
-    /* margin-top: 20px; */
+    margin-top: -20px; 
     margin-left: 60px;
 }
 
+.wCard #locDHead{
+    color: var(--text-sec-color);
+    font-style: italic;
+    font-weight: bold;
+    /* font-size: 21px; */
+}
 
 
 #windSelect,#presSelect, #dewSelect{
@@ -398,7 +407,8 @@ nav ul a{
 
 .wDetails h1{
     color: var(--heading-color);
-    text-align: center
+    text-align: center;
+    font-weight: bold;
     
 }
 
@@ -570,6 +580,7 @@ nav ul a{
 #wethMaps h1{
     text-align: center;
     color: var(--heading-color);
+    font-weight: bold;
 }
 
 
@@ -614,6 +625,7 @@ nav ul a{
 .mapItem a{
     text-decoration: none;
     color: var(--text-sec-color);
+    font-weight: bold;
 }
 
 /* -------trends-Historic data------- */
@@ -636,4 +648,56 @@ nav ul a{
 
 .historicDataContainer h1{
     color: var(--heading-color);
+    font-weight: bold;
+}
+
+
+/* ---Notice */
+.noticeBoard{
+    display: flex;
+    flex-direction: row;
+   margin-left: 200px;
+   width: 70vw;
+   height: 90vh;
+   background-color: var(--text-sec-color);
+}
+.n-row{
+    display: grid;
+    grid-template-columns: repeat(1,3);
+    margin-left: 10px;
+    
+    
+    
+}
+#noticeCard{
+    width: 500px;
+    height:200px;
+    margin-top: 150px;
+    margin-left: -400px;
+    border: 1px solid #4CD137;
+    
+}
+.noticeBoard h1{
+    color: var(--heading-color);
+    text-align: center;
+    margin-left: 480px;
+    font-weight: bold;
+}
+
+#noticeRow .n-message h3{
+    color: #94E387;
+    font-weight: normal;
+    text-align: center;
+}
+
+#noticeCard p{
+    color: var(--card-bgColor);
+}
+#noticeCard h5{
+    color:var(--text-prim-color);
+    font-weight: bold;
+}
+
+#noticeRow h3{
+    color: var(--card-bgColor);
 }
