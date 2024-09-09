@@ -590,7 +590,14 @@ nav ul a{
     height: 400px;
     margin-top: 80px;
     margin-left:  135px;
-    background-color: var(--text-prim-color);
+    
+}
+
+#tempMap img{
+    width: 400px;
+    height: 300px;
+    background-image: url("https://map.worldweatheronline.com/"
+    );
 }
 
 .mapContainer img{
@@ -630,27 +637,113 @@ nav ul a{
 
 /* -------trends-Historic data------- */
 
-#trendsHis{
+/* #trendsHis{
     display: flex;
     justify-content: center;
-}
+} */
+
+/* .histryRow{
+   display:flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+    gap: 10px;
+} */
+
 
 .historicDataContainer{
-    position: relative;
+   
     width: 70vw;
     height: 90vh;
     margin-left: 132px;
     background-color: var(--text-sec-color);
-    justify-content: center;
+   
     text-align: center;
+    margin-left: 200px;
 }
-
 
 .historicDataContainer h1{
     color: var(--heading-color);
     font-weight: bold;
 }
 
+.histryRow{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-top: 100px;
+    margin-left: 10px;
+}
+.hisTable{
+    width: 500px;
+    height: 350px;
+    background-color: var(--card-bgColor);
+    
+    
+}
+ .hisTable .hisTableHead{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    background-color: var(--table-headColor);
+    color: #4CD137;
+    font-weight: bold;
+    height: 50px;
+    align-items: center;
+}
+
+.hisTable .hisTableBody-Row{
+    display: grid;
+    grid-template-columns: repeat(2,11fr);
+    
+}
+.hisTable .hisTableBody-Row:nth-child(2),
+.hisTable .hisTableBody-Row:nth-child(4),
+.hisTable .hisTableBody-Row:nth-child(6),
+.hisTable .hisTableBody-Row:nth-child(8),
+.hisTable .hisTableBody-Row:nth-child(10),
+.hisTable .hisTableBody-Row:nth-child(12){
+    background-color: var(--heading-color);
+}
+
+.hisTable .hisTableBody-Row li{
+    list-style: none;
+    border-bottom: 1px solid black;
+}
+
+.histryRow .avgTable{
+    width: 450px;
+    height: 350px;
+    background-color: var(--card-bgColor);
+    margin-left: 60px;
+    /* margin-top: -350px; */
+}
+
+.histryRow .avgTable .avgTableHead{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    background-color: var(--table-headColor);
+    color: var(--heading-color);
+    height: 50px;
+    align-items: center;
+}
+
+
+.avgTable .avgTableBody-row{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.avgTable .avgTableBody-row li{
+    list-style: none;
+    border-bottom: 1px solid black;
+}
+.avgTable .avgTableBody-Row:nth-child(2),
+.avgTable .avgTableBody-Row:nth-child(4),
+.avgTable .avgTableBody-Row:nth-child(6),
+.avgTable .avgTableBody-Row:nth-child(8),
+.avgTable .avgTableBody-Row:nth-child(10),
+.avgTable .avgTableBody-Row:nth-child(12){
+    background-color: var(--heading-color);
+}
+/* ------------------------------------ */
 
 /* ---Notice */
 .noticeBoard{
@@ -666,12 +759,11 @@ nav ul a{
     grid-template-columns: repeat(1,3);
     margin-left: 10px;
     
-    
-    
 }
 #noticeCard{
-    width: 500px;
-    height:200px;
+    position: absolute;
+    width: 600px;
+    height:400px;
     margin-top: 150px;
     margin-left: -400px;
     border: 1px solid #4CD137;
@@ -693,11 +785,25 @@ nav ul a{
 #noticeCard p{
     color: var(--card-bgColor);
 }
-#noticeCard h5{
+#noticeCard h6{
     color:var(--text-prim-color);
     font-weight: bold;
 }
 
 #noticeRow h3{
     color: var(--card-bgColor);
+}
+#noticeHeading {
+    font-size: medium;
+}
+#noticeCard #scrDes{
+    margin-top: 30px;
+    position: relative;
+    height: 135px;
+    overflow: scroll;
+    background: #0F2A0B;
+    background-color: #243342;
+}
+#noticeCard #impact{
+    background-color: #10161C;
 }

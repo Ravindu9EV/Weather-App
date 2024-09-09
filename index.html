@@ -333,14 +333,17 @@
         <div class="wetherMps">
           <h1>Maps</h1>
 
-          <div class="mapContainer">
-            <img src="https://zoom.earth/maps/temperature/" alt="">
+          <div  class="mapContainer">
+            <div id="tempMap">
+              <img src="https://www.ventusky.com/?p=-9;-101;1&l=temperature-2m&t=20240909/22&src=link" alt="">
+            </div>
+            
           </div>
 
           <div class="mapBar">
             <div class="mapItem">
               <img src="images/tempIcon.png" alt="">
-              <a href=""><p>Temperature</p></a>
+              <a href="https://map.worldweatheronline.com/"><p>Temperature</p></a>
             </div>
             <div class="mapItem">
               <img src="images/windIcon.png" alt="">
@@ -358,12 +361,50 @@
     <section id="trendsHis">
       <div class="container">
         <div class="historicDataContainer">
+          
           <h1>Historical Weather Data</h1>
+          
+          <div class="histryRow">
+
+            
+              <div class="hisTable">
+                <div class="hisTableHead">
+                  <h5>Month</h5>
+                  <h5> AVG Temp </h5>
+                </div>
+                <div id="tblHisBody" class="hisTableBody">
+                  <!-- <div class="hisTableBody-row">
+                   
+                  </div> -->
+                </div>
+                
+              </div>
+              <div class="avgTable">
+                <div class="avgTableHead">
+                  <h5 style="margin-right: 40px;">Month</h5>
+                  
+                  <h5>MAX Wind</h5>
+                  
+                </div>
+                <div id="tblAvgBody" class="avgTableBody">
+                  <!-- <div class="avgTableBody-row">
+
+                  </div> -->
+                </div>
+              </div>
+            
+              
+            
+          </div>
+            
+            
+          
+          
         </div>
       </div>
     </section>
 
-    <section>
+    <!-- <section> -->
       <div class="container">
         
         <div class="noticeBoard">
@@ -374,7 +415,7 @@
           </div>
         </div>
       </div>
-    </section>
+    <!-- </section> -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
