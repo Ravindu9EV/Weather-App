@@ -137,7 +137,7 @@ nav ul a{
     flex-direction: column;
     width: 70vw;
     height: 90vh;
-    background-color: var(--text-sec-color);
+    background-color: var(--text-prim-color);
     margin-left: 200px;
     align-items: center;
     
@@ -235,7 +235,7 @@ nav ul a{
    grid-template-columns: repeat(2,1fr);
     width: 70vw;
     height: 60vh;
-    background: #adbd4f;
+    
     padding-left: 10px;
     padding-top: 100px;
 }
@@ -374,7 +374,7 @@ nav ul a{
     width: 70vw;
     height: 90vh;
     margin-left: 200px;
-    background-color: var(--text-sec-color);
+    background-color: var(--text-prim-color);
 }
 
 
@@ -402,7 +402,7 @@ nav ul a{
     width: 70vw;
     height: 90vh;
     margin-left: 200px;
-    background-color: var(--card-bgColor);
+    background-color: var(--text-prim-color);
 }
 
 .wDetails h1{
@@ -574,7 +574,7 @@ nav ul a{
     width: 70vw;
     height: 90vh;
     margin-left: 132px;
-    background-color: var(--text-sec-color);
+    background-color: var(--text-prim-color);
 }
 
 #wethMaps h1{
@@ -655,7 +655,7 @@ nav ul a{
     width: 70vw;
     height: 90vh;
     margin-left: 132px;
-    background-color: var(--text-sec-color);
+    background-color: var(--text-prim-color);
    
     text-align: center;
     margin-left: 200px;
@@ -749,10 +749,10 @@ nav ul a{
 .noticeBoard{
     display: flex;
     flex-direction: row;
-   margin-left: 200px;
+   margin-left: 254px;
    width: 70vw;
    height: 90vh;
-   background-color: var(--text-sec-color);
+   background-color: var(--text-prim-color);
 }
 .n-row{
     display: grid;
@@ -812,6 +812,47 @@ nav ul a{
 /* reponsive */
 
 @media screen and (max-width:620px) {
+
+    .symbolT{
+        position: fixed;
+        background-color: var(--card-bgColor);
+        display: grid;
+        height: 65px;
+        width: 35px;
+        grid-template-columns: repeat(1,2fr);
+        padding: 5px 8px;
+       z-index: 999;
+        margin-left: 318px;
+    }
+    
+    
+    .symbolT hr{
+        width: 15px;
+        margin-left: 4px;
+       margin-top: -2px;
+    }
+    .symbolT img{
+        margin-left: 4px;
+        width: 15px;
+        height: 15px;
+    }
+    
+    .symbolT #imgFar{
+        margin-top: 1px;
+    }
+    
+    .coverY{
+        width: 25px;
+        height: 25px;
+        background-color: #243342;
+        margin-top: -6px;
+    }
+    .coverN{
+        width: 25px;
+        height: 25px;
+        background-color: var(--card-bgColor);
+    }
+
     
     .noticeBoard{
         width: 100vw;
@@ -998,7 +1039,7 @@ nav ul a{
         width: 100vw;
         height: 100vh;
         /* margin-left: 132px; */
-        background-color: var(--text-sec-color);
+        background-color: var(--text-prim-color);
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -1018,6 +1059,10 @@ nav ul a{
         border: 1px solid var(--heading-color);
     }
 
+    .wetherMps{
+        width: 100vw;
+        margin-left: 50vw;
+    }
     #wethMaps{
         width: 100vw;
         overflow: hidden;
@@ -1070,6 +1115,12 @@ nav ul a{
         font-size: smaller;
     }
     .cardF h4{
+        font-size: small;
+    }
+   .cardF .perciptionRow #txtPerciption,#txtPerciptionV{
+        font-size: x-small;
+    }
+    .cardF .descriptionW{
         font-size: small;
     }
 }
