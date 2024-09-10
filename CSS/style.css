@@ -1105,8 +1105,8 @@ nav ul a{
     }
     
     .mapBar{
-        width: 60vw;
-        height: 45px;
+        width: 40vw;
+        height: 35px;
         display: grid;
         background-color: var(--card-bgColor);
         grid-template-columns: repeat(3,1fr);
@@ -1115,7 +1115,7 @@ nav ul a{
         text-align: center;
         border-radius: 40px;
         margin-top: 10px;
-        margin-left: 100px;
+        margin-left: 10px;
         padding: 4px 0;
     }
     .mapItem img{
@@ -1129,8 +1129,6 @@ nav ul a{
 
 
 @media screen and (max-width:537px) {
-
-
 
     .forecast{
         width: 100vw;
@@ -1161,5 +1159,46 @@ nav ul a{
     }
     .cardF .descriptionW{
         font-size: small;
+    }
+
+    .noticeBoard{
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+       
+    }
+    .noticeBoard h1{
+     margin-left: 100px;  
+    }
+
+    .mapContainer{
+    
+        width: 100vw;
+        height: 60vh;
+        margin-top: 80px;
+        margin-left:  135px;
+        overflow: scroll;
+    }
+    #tempMap img{
+        width: 40vw;
+        height: 300px;
+        background-image: url("https://map.worldweatheronline.com/"
+        );
+    }
+
+    .mapBar{
+        width: 30vw;
+        height: 45px;
+        display: grid;
+        background-color: var(--card-bgColor);
+        grid-template-columns: repeat(3,1fr);
+        gap: 2px;
+        align-items: center;
+        text-align: center;
+        border-radius: 40px;
+        margin-top: 10px;
+        margin-left: 10px;
+        padding: 4px 0;
     }
 }

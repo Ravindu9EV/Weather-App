@@ -409,7 +409,6 @@ function foreCast() {
     .then((response) => response.json())
     .then((data) => {
       console.log(data.forecast.forecastday[0].date + "pllplpl");
-      //
 
       dayHistry += data.forecast.forecastday[0].date;
       console.log(data.forecast.forecastday.length);

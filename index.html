@@ -341,8 +341,8 @@
           </div>
 
           <div class="mapBar">
-            <div class="mapItem">
-              <img src="images/tempIcon.png" alt="">
+            <div id="decorative-map" class="mapItem" inert>
+              
               <a href="https://map.worldweatheronline.com/"><p>Temperature</p></a>
             </div>
             <div class="mapItem">
@@ -422,6 +422,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"></script>
+    <Script src="https://unpkg.com/wicg-inert@latest/dist/inert.min.js"></Script>
     <script src="assets/app.js"></script>
   </body>
 </html>
