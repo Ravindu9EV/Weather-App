@@ -770,7 +770,7 @@ nav ul a{
 
 /* reponsive */
 
-@media screen and (max-width:620px) {
+@media screen and (max-width:520px) {
 
     .symbolT{
         position: fixed;
