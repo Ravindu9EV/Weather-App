@@ -525,6 +525,7 @@ nav ul a{
 #wethMaps{
     display: flex;
     justify-content: center;
+    
 }
 
 .wetherMps{
@@ -1080,5 +1081,48 @@ nav ul a{
     }
     .cardF .descriptionW{
         font-size: small;
+    }
+
+    .mapContainer{
+    
+        width: 100vw;
+        height: 60vh;
+        margin-top: 80px;
+        margin-left:  135px;
+        overflow: scroll;
+    }
+    
+    #tempMap img{
+        width: 40vw;
+        height: 300px;
+        background-image: url("https://map.worldweatheronline.com/"
+        );
+    }
+    
+    .mapContainer img{
+        width: 60vw;
+        height: 35vh;
+    }
+    
+    .mapBar{
+        width: 60vw;
+        height: 45px;
+        display: grid;
+        background-color: var(--card-bgColor);
+        grid-template-columns: repeat(3,1fr);
+        gap: 2px;
+        align-items: center;
+        text-align: center;
+        border-radius: 40px;
+        margin-top: 10px;
+        margin-left: 100px;
+        padding: 4px 0;
+    }
+    .mapItem img{
+        width: 20px;
+        height: 20px;
+    }
+    .mapBar p{
+        font-size: smaller;
     }
 }
