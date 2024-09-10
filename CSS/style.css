@@ -1126,3 +1126,40 @@ nav ul a{
         font-size: smaller;
     }
 }
+
+
+@media screen and (max-width:537px) {
+
+
+
+    .forecast{
+        width: 100vw;
+        height: 50vh;
+    }
+
+    .forecast h1{
+        font-size: small;
+    }
+    .forecast h3{
+        font-size: smaller;
+    }
+
+    .cardsF{
+        width: 25vw;
+        overflow: scroll;
+        
+    }
+
+    .cardF P{
+        font-size: smaller;
+    }
+    .cardF h4{
+        font-size: small;
+    }
+   .cardF .perciptionRow #txtPerciption,#txtPerciptionV{
+        font-size: x-small;
+    }
+    .cardF .descriptionW{
+        font-size: small;
+    }
+}
