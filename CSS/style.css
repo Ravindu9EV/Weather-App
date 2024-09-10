@@ -807,3 +807,269 @@ nav ul a{
 #noticeCard #impact{
     background-color: #10161C;
 }
+
+
+/* reponsive */
+
+@media screen and (max-width:620px) {
+    
+    .noticeBoard{
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+       
+    }
+    .noticeBoard h1{
+     margin-left: 100px;  
+    }
+
+    .container-1 .navImg{
+        
+        width: 10vw;
+        margin-top: 50px ;
+    }
+    .container-1 .navImg img{
+        display: none;
+        width: 20px;
+        color: #243342;
+        
+    }
+    .container-1 nav{
+        margin-top: 47px;
+        width: 40vw;
+        grid-template-columns: repeat(1,2fr);
+       
+    }
+    
+    #alertsCont{
+        width: 100vw;
+    }
+    .navItems{
+    
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+    }
+    .navItems ul{
+        width: 10vw;
+    }
+    .navItems ul li{
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        display: flex;
+        float: inline-start;
+        flex-direction: column;
+        margin-bottom: -35px;
+    }
+    .container{
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        margin: 4px;
+        
+    }
+    
+    .leftP{
+        position: fixed;
+        width: 20vw;
+        /* background-color: azure; */
+        margin-right: 4px;
+        padding: 4px 0px;
+        margin-left: 2px;
+        position: fixed;
+        display: -moz-inline-grid;
+        grid-template-columns: repeat(6,1fr);
+      
+    }
+    .container-1{
+       
+        width: 10vw;
+        height: 10vh;
+        display: -moz-grid-group;
+        flex-direction: column;
+        grid-column: repeat(6,1fr);
+        grid-template-rows: 1fr;
+        grid-template: min-content;
+        background-color: transparent;
+    }
+    .container-2{
+        width: 100vw;
+        
+    }
+
+    #btn-search{
+        height: 25px;
+        margin-left: -85px;
+        
+    }
+
+    #btn-search img{
+        width: 20px;
+        margin-top: -2px;
+    }
+
+
+    .container-2 .wCard{
+        width: 65vw;
+        height: 300px;
+        padding: 2px;
+        border: 1px solid var(--table-headColor);
+        background: var(--card-bgColor);
+        border-radius: 20px;
+        margin-left: -15px;
+    }
+    
+    .container-2 .wImage{
+        width: 65vw;
+        height: 220px;
+     
+        margin-top: -20px;
+        margin-left: -15px;
+    }
+    
+    .container-2 .wCard .midRow {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 2;
+    }
+    .wRow{
+        display: grid;
+        grid-template-columns: repeat(1,2fr);
+    }
+    
+    .container-2 .wCard .midRow img{
+        width: 10vw;
+        margin-top: -35px;
+        margin-left: 10px;
+        margin-bottom: -100px;
+    }
+    .container-2 .wCard .midRow p{
+        margin-top: 15px;
+        margin-left: 30px;
+        margin-top: 10px;
+        
+    }
+    .container-2 .wCard .midRow #txtCond{
+        margin-left: 120px;
+        margin-top: 20px;
+        color: var(--text-sec-color);
+    }
+    
+    .container-2 .wCard .bRow{
+        display: grid;
+        grid-template-columns: repeat(4 ,2fr) ;
+       
+        margin-top: -20px; 
+        margin-left: 60px;
+    }
+    
+
+    .top-level{
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+
+       
+    }
+    .histryRow{
+        display: flex;
+        flex-direction: row;
+        float: none;
+        overflow: scroll;
+        width: 100vw;
+        font-size: smaller;
+        margin-top: -300px;
+        
+    }
+
+    .histryRow .avgTable,.histryRow .hisTable{
+        width: 45vw;
+        overflow: scroll;
+        margin: 8px;
+    }
+    .avgTable .avgTableBody-row{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        
+    }
+    .historicDataContainer{
+   
+        width: 100vw;
+        height: 100vh;
+        /* margin-left: 132px; */
+        background-color: var(--text-sec-color);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        /* margin-left: 200px; */
+    }
+
+    .historicDataContainer h1{
+        margin-left: 10vw;
+    }
+    #txt-search{
+   
+        width: 40vw;
+        height: 20px;
+        margin-left: -80px;
+        border-radius: 20px;
+        border: 1px solid var(--heading-color);
+    }
+
+    #wethMaps{
+        width: 100vw;
+        overflow: hidden;
+    }
+
+    #tempMap{
+        width: 40vw;
+    }
+
+    .wDetails{
+        width: 100%;
+        height: 50vh;
+    }
+    .forecast{
+        width: 100vw;
+    }
+
+    #noticeCard{
+        position: absolute;
+        width: 50vw;
+        height:400px;
+        margin-top: 150px;
+        margin-left: -45vw;
+        border: 1px solid #4CD137;
+        overflow: scroll;
+    }
+    .noticeRow{
+        width: 70vw;
+    }
+
+    .forecast{
+        width: 100vw;
+        height: 50vh;
+    }
+
+    .forecast h1{
+        font-size: medium;
+    }
+    .forecast h3{
+        font-size: small;
+    }
+
+    .cardsF{
+        width: 50vw;
+        overflow: scroll;
+        
+    }
+
+    .cardF P{
+        font-size: smaller;
+    }
+    .cardF h4{
+        font-size: small;
+    }
+}
