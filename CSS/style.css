@@ -518,49 +518,7 @@ nav ul a{
 
 
 
-/* .symbolTF{
-    position: relative;
-    background-color: var(--card-bgColor);
-    display: grid;
-    height: 50px;
-    width: 34px;
-    grid-template-columns: repeat(1,2fr);
-    padding: 5px 8px;
-   
-    margin-left: 880px;
-}
 
-
-.symbolTF hr{
-    width: 15px;
-    margin-left: 10px;
-   margin-top: 4px;
-   margin-bottom: 4px;
-}
-.symbolTF img{
-    margin-left: 4px;
-    width: 15px;
-}
-
-
-.symbolTF .coverY{
-    width: 22px;
-    height: 16px;
-    background-color: #243342;
-}
-.symbolTF .coverN{
-    width: 15px;
-    height: 16px;
-    background-color: var(--card-bgColor);
-}
-
-
-.symbolTF #sUp,.symbolTF #sDwn{
-    position: relative;
-    align-items: center;
-    justify-content: center;
-   
-} */
 
 /* ---------------wether Maps-------------- */
 
