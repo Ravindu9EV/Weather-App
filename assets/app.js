@@ -264,7 +264,8 @@ function setDetails(
       document.getElementById("dewD").innerText = dewPF + " \u00B0F";
     } else {
       document.getElementById("cTemp").innerText = temp + " \u00B0C";
-      document.getElementById("feelsL").innerText = feelsLike + " \u00B0C";
+      document.getElementById("feelsL").innerText =
+        "Feels Like  " + feelsLike + " \u00B0C";
       document.getElementById("dewD").innerText = dew + " \u00B0C";
     }
   });
@@ -276,7 +277,8 @@ function setDetails(
       document.getElementById("dewD").innerText = dewPF + " \u00B0F";
     } else {
       document.getElementById("cTemp").innerText = temp + " \u00B0C";
-      document.getElementById("feelsL").innerText = feelsLike + " \u00B0C";
+      document.getElementById("feelsL").innerText =
+        "Feels Like  " + feelsLike + " \u00B0C";
       document.getElementById("dewD").innerText = dew + " \u00B0C";
     }
   });
